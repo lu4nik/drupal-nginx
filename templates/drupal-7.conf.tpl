@@ -63,7 +63,7 @@ server {
             add_header ETag '';
             add_header Last-Modified 'Wed, 20 Jan 1988 04:20:42 GMT';
             add_header Accept-Ranges '';
-            location ~* /sites/.*/files/advagg_css/css[_-[:alnum:]]+\.css$ {
+            location ~* /sites/.*/files/advagg_css/css[_\-[:alnum:]]+\.css$ {
                 access_log {{ getenv "NGINX_STATIC_CONTENT_ACCESS_LOG" "off" }};
                 try_files $uri @drupal;
             }
@@ -74,7 +74,7 @@ server {
             add_header ETag '';
             add_header Last-Modified 'Wed, 20 Jan 1988 04:20:42 GMT';
             add_header Accept-Ranges '';
-            location ~* /sites/.*/files/advagg_js/js[_-[:alnum:]]+\.js$ {
+            location ~* /sites/.*/files/advagg_js/js[_\-[:alnum:]]+\.js$ {
                 access_log {{ getenv "NGINX_STATIC_CONTENT_ACCESS_LOG" "off" }};
                 try_files $uri @drupal;
             }
